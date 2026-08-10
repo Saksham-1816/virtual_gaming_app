@@ -217,7 +217,7 @@ flutter build apk --debug   # or --release
 
 ## Author
 
-Virtual Gaming App — converted for assessment/demo by the project owner.
+Developed by Dev Saksham-1816.
 
 If you want, I can also:
 
