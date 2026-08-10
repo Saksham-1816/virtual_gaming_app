@@ -57,59 +57,76 @@ flutter run
 
 ```
 virtual_gaming_app/
-	android/
-	ios/
-	linux/
-	macos/
-	windows/
-	lib/
-		app.dart
-		main.dart
-		core/
-			constants/
-			routes/
-			services/
-			utils/
-			widgets/
-		features/
-			auth/
-				model/
-				repository/
-				view/
-				viewmodel/
-				widgets/
-			home/
-				view/
-				widgets/
-			navigation/
-			splash/
-		games/
-			dice_game.dart
-			coin_flip_game.dart
-		models/
-			bet/
-			wallet_model/
-			game/
-		providers/
-			auth/
-			wallet/
-			dice/
-			coin/
-			history/
-		services/
-			storage_service.dart
-		utils/
-			provably_fair.dart
-		view/
-			home/
-			history/
-			dice/
-			coin/
-	test/
-		provably_fair_test.dart
-		wallet_controller_test.dart
-		widget_test.dart
-	pubspec.yaml
+│
+├── android/
+├── ios/
+├── linux/
+├── macos/
+├── windows/
+│
+├── lib/
+│   │
+│   ├── app.dart
+│   ├── main.dart
+│   │
+│   ├── core/
+│   │   ├── constants/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── widgets/
+│   │
+│   ├── features/
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── model/
+│   │   │   ├── repository/
+│   │   │   ├── view/
+│   │   │   ├── viewmodel/
+│   │   │   └── widgets/
+│   │   │
+│   │   ├── home/
+│   │   │   ├── view/
+│   │   │   └── widgets/
+│   │   │
+│   │   ├── navigation/
+│   │   └── splash/
+│   │
+│   ├── games/
+│   │   ├── dice_game.dart
+│   │   └── coin_flip_game.dart
+│   │
+│   ├── models/
+│   │   ├── bet/
+│   │   ├── wallet_model/
+│   │   └── game/
+│   │
+│   ├── providers/
+│   │   ├── auth/
+│   │   ├── wallet/
+│   │   ├── dice/
+│   │   ├── coin/
+│   │   └── history/
+│   │
+│   ├── services/
+│   │   └── storage_service.dart
+│   │
+│   ├── utils/
+│   │   └── provably_fair.dart
+│   │
+│   └── view/
+│       ├── home/
+│       ├── history/
+│       ├── dice/
+│       └── coin/
+│
+├── test/
+│   ├── provably_fair_test.dart
+│   ├── wallet_controller_test.dart
+│   └── widget_test.dart
+│
+├── pubspec.yaml
+└── README.md
 ```
 
 ## Setup Instructions
