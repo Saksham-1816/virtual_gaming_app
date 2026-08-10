@@ -16,10 +16,13 @@ class _DiceScreenState extends State<DiceScreen> {
   final TextEditingController _betController = TextEditingController(
     text: '100',
   );
+  final ScrollController _scrollController = ScrollController();
+  bool _scrolledToResult = false;
 
   @override
   void dispose() {
     _betController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -82,10 +85,29 @@ class _DiceScreenState extends State<DiceScreen> {
       builder: (context, diceProvider, walletProvider, child) {
         final result = diceProvider.lastResult;
 
+        // Reset scrolled flag when result cleared
+        if (result == null) {
+          _scrolledToResult = false;
+        }
+
+        if (result != null && !_scrolledToResult) {
+          // schedule scroll to result after frame
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!_scrollController.hasClients) return;
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeOut,
+            );
+            _scrolledToResult = true;
+          });
+        }
+
         return Scaffold(
           backgroundColor: const Color(0xFF04040D),
           body: SafeArea(
-            child: Padding(
+            child: SingleChildScrollView(
+              controller: _scrollController,
               padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,13 +140,7 @@ class _DiceScreenState extends State<DiceScreen> {
 
                   const SizedBox(height: 12),
 
-                  if (result != null)
-                    Expanded(
-                      child: SingleChildScrollView(
-                        physics: const NeverScrollableScrollPhysics(),
-                        child: _buildResultCard(result, diceProvider),
-                      ),
-                    ),
+                  if (result != null) _buildResultCard(result, diceProvider),
                 ],
               ),
             ),
@@ -174,12 +190,10 @@ class _DiceScreenState extends State<DiceScreen> {
         borderRadius: BorderRadius.circular(28),
         border: Border.all(color: const Color(0xFF4A465D), width: 1.2),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-       
-      ),
+      child: Row(mainAxisSize: MainAxisSize.min),
     );
   }
+
   Widget _buildBalanceCard(int balance) {
     return Container(
       width: double.infinity,
@@ -239,6 +253,7 @@ class _DiceScreenState extends State<DiceScreen> {
       ),
     );
   }
+
   Widget _buildLabel(String text) {
     return Text(
       text,

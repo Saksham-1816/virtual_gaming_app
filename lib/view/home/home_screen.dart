@@ -469,9 +469,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           _gameCard(
-            title: 'Teen Patti',
-            subtitle: '★ Popular',
-            icon: Icons.style,
+            title: 'Mines',
+            subtitle: 'Popular',
+            icon: Icons.dangerous_outlined,
             isSelected: false,
           ),
 
@@ -483,9 +483,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           _gameCard(
-            title: 'Slots',
-            subtitle: 'Fun',
-            icon: Icons.local_activity,
+            title: 'Crash',
+            subtitle: 'hot',
+            icon: Icons.flight_takeoff,
             isSelected: false,
           ),
         ],
