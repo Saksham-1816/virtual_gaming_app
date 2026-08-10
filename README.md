@@ -63,13 +63,26 @@ virtual_gaming_app/
 	macos/
 	windows/
 	lib/
+		app.dart
 		main.dart
-		controllers/
-			auth_controller/
-			wallet_controller/
-			dice/
-			coin/
-			history/
+		core/
+			constants/
+			routes/
+			services/
+			utils/
+			widgets/
+		features/
+			auth/
+				model/
+				repository/
+				view/
+				viewmodel/
+				widgets/
+			home/
+				view/
+				widgets/
+			navigation/
+			splash/
 		games/
 			dice_game.dart
 			coin_flip_game.dart
