@@ -112,6 +112,40 @@ virtual_gaming_app/
 	pubspec.yaml
 ```
 
+## Setup Instructions
+
+1. Clone the repository.
+2. Make sure Flutter is installed and available on your machine.
+3. Run the dependency install command:
+
+```bash
+flutter pub get
+```
+
+4. Create or update the `.env` file in the project root.
+5. Add your API base URL in the `.env` file (if your app uses an API):
+
+```
+API_BASE_URL=http://your-api-url/api/
+```
+
+6. Run the app:
+
+```bash
+flutter run
+```
+
+### API Configuration
+
+If your project integrates with a backend, the `.env` file is used to point the app at the correct API endpoint. The `.env` file is intentionally gitignored so you can keep environment-specific settings private.
+
+If you need machine-readable test output for CI, run:
+
+```bash
+flutter test --machine > test-results.json
+```
+
+
 ## Tests and full logs
 
 Run tests with expanded logs to capture full debug output in console:

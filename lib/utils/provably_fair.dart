@@ -18,10 +18,14 @@ class ProvablyFair {
     return _hexEncode(bytes);
   }
 
-  static int diceFromSeeds({required String serverSeed, required String clientSeed}) {
+  static int diceFromSeeds({
+    required String serverSeed,
+    required String clientSeed,
+  }) {
     final bytes = _hmacSha256Bytes(serverSeed, clientSeed);
     // use first 4 bytes to form positive int
-    final v = ((bytes[0] & 0xFF) << 24) |
+    final v =
+        ((bytes[0] & 0xFF) << 24) |
         ((bytes[1] & 0xFF) << 16) |
         ((bytes[2] & 0xFF) << 8) |
         (bytes[3] & 0xFF);
@@ -29,7 +33,10 @@ class ProvablyFair {
     return (positive % 100) + 1;
   }
 
-  static int coinFromSeeds({required String serverSeed, required String clientSeed}) {
+  static int coinFromSeeds({
+    required String serverSeed,
+    required String clientSeed,
+  }) {
     final bytes = _hmacSha256Bytes(serverSeed, clientSeed);
     return bytes[0] & 1;
   }
@@ -57,5 +64,6 @@ class ProvablyFair {
     return out;
   }
 
-  static String _hexEncode(List<int> bytes) => bytes.map((b) => b.toRadixString(16).padLeft(2, '0')).join();
+  static String _hexEncode(List<int> bytes) =>
+      bytes.map((b) => b.toRadixString(16).padLeft(2, '0')).join();
 }
