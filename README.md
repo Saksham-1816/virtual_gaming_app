@@ -225,7 +225,5 @@ flutter build apk --debug   # or --release
 
 Developed by Dev Saksham-1816.
 
-If you want, I can also:
-
-- Create a `RELEASE_INSTRUCTIONS.md` with step-by-step APK upload and example release notes.
-- Add a small `screenshots/` folder and update README image links when you upload screenshots or an APK to GitHub releases.
+-------------------------
+----------------------------------
