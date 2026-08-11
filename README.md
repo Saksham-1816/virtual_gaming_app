@@ -216,7 +216,9 @@ flutter build apk --debug   # or --release
 - `test/` — unit tests and examples of running tests.
 --------------------------------------------------------------------------------
 ## APk
+## 📱 Download APK
 
+[![Download APK](https://img.shields.io/badge/⬇️%20Download%20APK-4CAF50?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Saksham-1816/virtual_gaming_app/releases/tag/build)
 
 
 ## Author
