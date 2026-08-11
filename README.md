@@ -214,6 +214,10 @@ flutter build apk --debug   # or --release
 - `lib/utils/provably_fair.dart` — HMAC-based deterministic roll helper.
 - `lib/view/home/home_screen.dart` — history preview and navigation hooks.
 - `test/` — unit tests and examples of running tests.
+--------------------------------------------------------------------------------
+## APk
+
+
 
 ## Author
 
